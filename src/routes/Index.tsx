@@ -29,7 +29,7 @@ export const Index = () => {
 			low: 83211000,
 			lowTime: 'July 2nd 2025, 9:53:48 pm',
 			margin: 4057999,
-			name: '3rd age safdasdfasfsd',
+			name: 'test',
 			potentialProfit: 32463992,
 			tax: 1781000,
 		},

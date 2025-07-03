@@ -17,6 +17,13 @@ export type LatestItemData = {
 	lowTime: number;
 };
 
+export type ItemVolumeData = {
+	avgHighPrice: number;
+	highPriceVolume: number;
+	avgLowPrice: number;
+	lowPriceVolume: number;
+};
+
 export type GrandExchangeData = {
 	high: number;
 	highTime: number;
@@ -28,4 +35,9 @@ export type GrandExchangeData = {
 	name: string;
 	potentialProfit: number;
 	tax: number;
+	avgHighPrice: number;
+	highPriceVolume: number;
+	avgLowPrice: number;
+	lowPriceVolume: number;
+	lastHourVolume: number;
 };

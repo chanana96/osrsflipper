@@ -28,6 +28,9 @@ type Data = {
 	potentialProfit: number;
 	high: number;
 	low: number;
+	lowPriceVolume: number;
+	highPriceVolume: number;
+	lastHourVolume: number;
 };
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -88,6 +91,25 @@ const headCells: readonly HeadCell[] = [
 		numeric: true,
 		disablePadding: false,
 		label: 'Insta sell',
+	},
+
+	{
+		id: 'highPriceVolume',
+		numeric: true,
+		disablePadding: false,
+		label: 'High volume',
+	},
+	{
+		id: 'lowPriceVolume',
+		numeric: true,
+		disablePadding: false,
+		label: 'Low volume',
+	},
+	{
+		id: 'lastHourVolume',
+		numeric: true,
+		disablePadding: false,
+		label: 'Total volume',
 	},
 ];
 
@@ -300,10 +322,15 @@ export default function EnhancedTable({ rows }) {
 											padding='none'>
 											{row.name}
 										</TableCell>
-										<TableCell align='right'>{row.margin}</TableCell>
+										<TableCell align='right'>
+											{row.margin} ({row.marginPercentage}%)
+										</TableCell>
 										<TableCell align='right'>{row.potentialProfit}</TableCell>
 										<TableCell align='right'>{row.high}</TableCell>
 										<TableCell align='right'>{row.low}</TableCell>
+										<TableCell align='right'>{row.highPriceVolume}</TableCell>
+										<TableCell align='right'>{row.lowPriceVolume}</TableCell>
+										<TableCell align='right'>{row.lastHourVolume}</TableCell>
 									</TableRow>
 								);
 							})}
